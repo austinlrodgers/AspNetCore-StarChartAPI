@@ -76,7 +76,7 @@ namespace StarChart.Controllers
 
             if (existingObject == null)
             {
-                NotFound();
+                return NotFound();
             }
 
             existingObject.Name = celestialObject.Name;
@@ -114,7 +114,7 @@ namespace StarChart.Controllers
 
             if (!celestialObjects.Any())
             {
-                NotFound();
+                return NotFound();
             }
 
             this._context.CelestialObjects.RemoveRange(celestialObjects);
