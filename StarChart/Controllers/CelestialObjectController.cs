@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using StarChart.Data;
 using StarChart.Models;
@@ -67,8 +64,9 @@ namespace StarChart.Controllers
 
             this._context.SaveChanges();
 
-            return CreatedAtRoute("GetById", new CelestialObject { Id = celestialObject.Id }, celestialObject);
+            return CreatedAtRoute("GetById", new CelestialObject { id = celestialObject.Id }, celestialObject);
         }
+
         [HttpPut("{id}")]
         public IActionResult Update(int id, CelestialObject celestialObject)
         {
